@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Psych Anti-Scroll</title>
+    <style>
+        body {
+            font-family: system-ui, sans-serif;
+            padding: 16px;
+            width: 280px;
+        }
+
+        h2 {
+            margin: 0 0 10px 0;
+            font-size: 16px;
+        }
+
+        .section {
+            margin-bottom: 18px;
+        }
+
+        .slider-container {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        #speedValue {
+            font-size: 12px;
+        }
+
+        .domain-input {
+            display: flex;
+            gap: 6px;
+        }
+
+        .domain-input input {
+            flex: 1;
+            padding: 6px 8px;
+            border-radius: 6px;
+            border: 1px solid #ddd;
+            font-size: 13px;
+        }
+
+        .domain-input button {
+            border: none;
+            background: #111;
+            color: white;
+            border-radius: 6px;
+            padding: 6px 10px;
+            cursor: pointer;
+        }
+
+        .domain-list {
+            margin-top: 10px;
+            max-height: 240px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .domain-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 6px 8px;
+            background: white;
+            border-radius: 6px;
+            border: 1px solid #eee;
+            font-size: 13px;
+            position: relative;
+        }
+
+        .domain-item::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: red;
+            transform: scaleX(0);
+            transform-origin: left;
+        }
+
+        .domain-item.is-loading::after {
+            animation: holdProgress 10s linear forwards;
+        }
+
+        @keyframes holdProgress {
+            from {
+                transform: scaleX(0);
+            }
+            to {
+                transform: scaleX(1);
+            }
+        }
+
+        .domain-item::after {
+            background: linear-gradient(
+                90deg,
+                rgba(255, 0, 0, 0.35),
+                rgba(255, 0, 0, 0.55)
+            );
+        }
+
+        .remove {
+            cursor: pointer;
+            color: #888;
+            font-weight: bold;
+        }
+
+        .removed {
+            color: gray;
+            font-style: italic;
+        }
+
+        .remove:hover {
+            color: red;
+        }
+
+        .color-pulse-text {
+            transition: color 0.2s linear;
+        }
+
+        .orange {
+            color: orange;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="section">
+        <h2>Scroll speed</h2>
+
+        <div class="slider-container">
+            <input type="range" id="speed-slider" min="0" max="50">
+            <span id="speed-value"></span>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Affected sites</h2>
+
+        <div class="domain-input">
+            <input type="url" id="domain-input" placeholder="example.com">
+            <button id="add-domain">Add</button>
+        </div>
+        <label for="domain-input" id="domain-input-label" class="color-pulse-text"></label>
+
+        <div class="domain-list" id="domain-list"></div>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+
+</html>
