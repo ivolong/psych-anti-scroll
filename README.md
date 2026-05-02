@@ -1,4 +1,4 @@
-# HLTV News Bot
+# Psych Anti-Scroll
 
 [![Super-Linter](https://github.com/ivolong/psych-anti-scroll/actions/workflows/super-linter.yml/badge.svg)](https://github.com/ivolong/psych-anti-scroll/actions/workflows/super-linter.yml)
 
