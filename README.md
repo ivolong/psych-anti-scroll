@@ -2,6 +2,7 @@
 
 [![Super-Linter](https://github.com/ivolong/psych-anti-scroll/actions/workflows/super-linter.yml/badge.svg)](https://github.com/ivolong/psych-anti-scroll/actions/workflows/super-linter.yml)
 [![Chrome Webstore Users](https://img.shields.io/chrome-web-store/users/lfjkpbgiebapcedoddkieiaebbmpnfbn?logo=chromewebstore&logoColor=white&label=Users&color=blue)](https://chromewebstore.google.com/detail/psych-anti-scroll/lfjkpbgiebapcedoddkieiaebbmpnfbn)
+[![Chrome Webstore Rating](https://img.shields.io/chrome-web-store/rating/lfjkpbgiebapcedoddkieiaebbmpnfbn?logo=chromewebstore&logoColor=white)](https://chromewebstore.google.com/detail/psych-anti-scroll/lfjkpbgiebapcedoddkieiaebbmpnfbn)
 
 A Chrome extension that turns doomscrolling into a chore.
 
